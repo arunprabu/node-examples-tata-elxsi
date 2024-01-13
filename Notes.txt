@@ -1,0 +1,125 @@
+
+Webapps 
+----
+  1. Front End App (HTML, CSS, JS)
+      Angular/ReactJS/VueJS 
+  2. Back End App 
+      Java/DotNet/PHP/Perl/Python/Ruby/NodeJS   + Database 
+
+Browser
+------
+  * HTML Renderer
+  * CSS Parser 
+  * JS Engine 
+
+Limitations of Front End JS to become Back end lang 
+----
+  * as it was meant for Client Side Scripting -- it was sync -- It should become async 
+  * Accessing File system is not possible 
+  * Communicating over HTTP (Js cannot receive req and cannot send the response)
+  * Working with DB is not possible to JS 
+
+
+NodeJS
+------
+  * Installable JS Engine but with some super powers (with libuv)
+  * Node.js® is an open-source, cross-platform JavaScript runtime environment.
+  * It is built on V8 JS Engine developed by Google chromium project
+  * Creator of NodeJS developed libuv -- it fixed the limitations of Js becoming back end lang 
+    * It is async 
+    * Accessing File System is possible 
+    * Communicating over HTTP is possible
+    * Working with DB is possible 
+  * Few irrelevant JS implementations which are centric around Front End removed 
+    example: alert, window (equivalent is global in NodeJS), document and many more 
+
+
+  main.js 
+  -----
+    var x = 10;
+    console.log(x) 
+    console.log(x * 1000);
+    alert('test');
+
+-------
+Apps 
+----
+  1. Webapps 
+      Front End 
+      ----
+        JS (Sync)
+
+      Back End 
+      ----
+        Java, DotNet, PHP, Python, Perl, Ruby, JS (NodeJS)
+
+  2. Desktop Apps 
+      Java, DotNet, Python, JS (Electron JS)
+
+  3. Mobile Apps / Tablet Apps 
+      Java (Kotlin -- android app), Swift for iOS App, DotNet (Xamirin), JS (Ionic, React Native)
+
+  4. TV Apps 
+      Java (Kotlin), Swift for Apple TV App, JS (Ionic, React Native)
+
+
+Database 
+-----
+  * RDBMS 
+    examples: Oracle, MySQL, Postgres, MariaDB and many more 
+    language: SQL 
+
+  * NoSQL Databases 
+    examples: MongoDB 
+    language: JS 
+
+=========
+
+
+Essential NodeJS for REST API Development
+  What's NodeJS? [DONE]
+  How it works? [DONE]
+  First Example in NodeJS [DONE]
+  Blocking and Non-Blocking I/O [dONE]
+  Files System  [DONE]
+  Events [DONE]
+  Buffer & Streams [DONE]
+  Http 
+
+Marble JS with Postgres DB 
+
+===========
+
+Developing REST API in Plain / Vanilla NodeJS has some disadvantages
+
+Let's go with REST API Development Frameworks
+----
+  1. Express JS 
+  2. Koa 
+  3. Nest.js
+  4. Loopback
+  5. Marble.JS (TO LEARN)
+
+What's Marble JS? 
+----
+  Marble.js is a functional reactive Node.js framework for building 
+  server-side applications, based on TypeScript and RxJS.
+
+Why Marble JS?
+-----
+  Http + Stream + Reactive Programming (RxJS)
+
+==========
+
+Key Terminologies In Marble.JS
+============== 
+  Reactive Programming
+  Stream
+  Routing 
+  Middlewares
+  Side Effects
+  Hot Observable 
+  Database Model 
+  Monads & Monadic Operations 
+
+=======
