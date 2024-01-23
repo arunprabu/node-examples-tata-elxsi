@@ -114,12 +114,12 @@ Why Marble JS?
 Key Terminologies In Marble.JS
 ============== 
   Reactive Programming
-  Stream
-  Routing 
+  Stream 
+  Routing  
   Middlewares
   Side Effects
   Hot Observable 
-  Database Model 
+  Database Model in pgAdmin 4
   Monads & Monadic Operations 
 
 =======

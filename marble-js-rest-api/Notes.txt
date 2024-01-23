@@ -1,0 +1,157 @@
+
+REST API for user management 
+  Example index api 
+    http://localhost:3001/
+
+  Example hello api 
+    http://localhost:3001/hello 
+
+  CRUD app 
+    Create User 
+      http://localhost:3001/api/v1/users     - POST
+
+    List all users 
+      http://localhost:3001/api/v1/users     - GET 
+
+    Fetch one User by id
+      http://localhost:3001/api/v1/users/1   - GET
+
+    Update one User by id
+      http://localhost:3001/api/v1/users/1   - PATCH
+
+    Delete one User by id   [ TODO ]
+      http://localhost:3001/api/v1/users/1   - DELETE
+    
+    
+==============
+
+Marble JS Project Development 
+---------
+  Step 1: create a folder for the project 
+        mkdir marble-js-rest-api
+        cd marble-js-rest-api
+
+  Step 2: create package.json file 
+        npm init -y
+
+  Step 3: 
+      Setup MarbleJS inside this project 
+        npm i @marblejs/core @marblejs/http @marblejs/middleware-logger @marblejs/middleware-body fp-ts rxjs
+
+      Also install ts 
+        npm install typescript ts-node -g 
+
+  Step 4: 
+      create index.ts with the following code 
+        // File 1
+        import { createServer } from "@marblejs/http";
+        import { IO } from "fp-ts/lib/IO";
+
+        const server = createServer({
+          port: 3001,
+          hostname: "127.0.0.1"
+        });
+
+        // main fn which returns a promise, plays significant role starting marble.js app
+        const main: IO<void> = async () => {
+          console.log('Inside Main');
+          return await (await server)();
+        }
+
+        main();
+
+    Step 5: 
+    ----
+
+
+=====
+
+Database
+------
+  * RDBMS 
+  * Examples: MySQL, Oracle, MariaDB, PostgresSQL
+  * Databases can have many tables
+  * Databases will have Schema for the tables
+  * Data will be in stored in tables in the form rows and columns 
+  * DBMS will have the server and the client to connect with it 
+  * DB Server should be started in a port number 
+  * DB Servers can be protected with credentials 
+    db url: localhost
+    db port: 27017
+    db username: admin
+    db password: password 
+
+  * There are 3 types of DB Clients 
+      1. Shell clients / Command Line Clients 
+      2. GUI Clients (pgAdmin or Heidi SQL, PhpMyAdmin, SQLYog, MSSQL Server)
+      3. Programming Client Tools aka Drivers 
+        (ex: pg or pg-promise for Postgres, mongodb, mysql2)
+  
+
+Validation of the form data [DONE]
+Typesafe [DONE]
+
+Stream [DONE]
+  localhost:3001/api/v1/stream/Notes1.txt
+
+Auth Middleware [DONE]
+
+
+Auth Flow 
+----
+  signup 
+    upon successful signup you can login 
+
+  login 
+    if email and password matching -- token will be generated and will be sent as res
+    [BROWSER]: save the token in local storage / session storage / cookies 
+    
+  dashboard 
+    [BROWSER]: should send the saved token to the backend as BEARER token
+      backend will get the bearer token from req headers and decode and verify 
+        if the token is valid only access will be granted
+        otherwise no 
+  
+
+
+================
+TODO: to trainer Arun: Send step by step instructions on testing Marble JS apps to Associates
+
+Step 1
+  npm i --save-dev jest @types/jest @marblejs/testing ts-jest
+
+Step 2: create jest.config.js 
+  module.exports = {
+    roots: ["<rootDir>"],
+    testMatch: [
+      "**/__tests__/**/*.+(ts|tsx|js)",
+      "**/?(*.)+(spec|test).+(ts|tsx|js)",
+    ],
+    transform: {
+      "^.+\\.(ts|tsx)$": "ts-jest",
+    },
+  };
+
+Step 3: 
+----  
+  create  __tests__/ folder and users.effects.spec.ts 
+
+  Refer the file users.effects.spec.ts 
+
+Step 4: 
+---
+  run jest 
+  in package.json 
+
+  "scripts": {
+    "start": "ts-node index.ts",
+    "test": "jest ." // this is important
+  },
+
+
+step 5: 
+  execute the test by typing the following command 
+
+  npm run test 
+
+===================
